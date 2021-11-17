@@ -30,11 +30,41 @@ ORDER BY emp_no;
 -- USE OF COUNT --
 
 SELECT 
-    first_name, COUNT(first_name) AS name_counts
+    COUNT(*)
+FROM
+    salaries
+WHERE
+    salary >= 100000;
+    
+SELECT
+
+    COUNT(*)
+
+FROM
+
+    salaries
+
+WHERE
+
+    salary >= 100000;
+    
+    
+SELECT 
+    COUNT(*)
+FROM
+    dept_manager;
+    
+SELECT 
+    *
 FROM
     employees
+ORDER BY hire_date DESC;
+
+SELECT 
+    salary, count(emp_no) as emps_with_same_salary
+FROM
+    salaries
 WHERE
-    hire_date > '1999-01-01'
-GROUP BY first_name
-HAVING COUNT(first_name) < 200
-ORDER BY first_name ;
+    salary > 80000
+GROUP BY salary
+ORDER BY salary;
