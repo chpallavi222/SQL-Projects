@@ -1,0 +1,53 @@
+/* EMPLOYEE DATABASE MANAGEMNET */
+
+
+SELECT 
+    *
+FROM
+    employees e
+WHERE
+    EXISTS( SELECT 
+            *
+		FROM
+            titles t
+        WHERE
+            t.emp_no = e.emp_no
+                AND title = 'Assistant Engineer')
+ORDER BY e.emp_no;
+
+SELECT
+	*
+FROM
+    employees e
+
+WHERE
+    EXISTS( SELECT
+            *
+        FROM
+            titles t
+        WHERE
+            t.emp_no = e.emp_no
+                AND title = 'Assistant Engineer');
+                
+SELECT 
+    *
+FROM
+    titles
+WHERE
+    title = 'Assistant Engineer';
+
+
+SELECT 
+    *
+FROM
+    dept_manager dm
+WHERE
+    EXISTS( SELECT 
+            *
+        FROM
+            departments d
+        WHERE
+            dm.dept_no = d.dept_no)
+        AND dm.dept_no = 'd004';
+        
+select * from dept_manager order by dept_no;
