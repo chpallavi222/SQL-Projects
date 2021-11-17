@@ -1,0 +1,40 @@
+/* EMPLOYEE DATABASE MANAGEMENT */
+
+-- USE OF AVERAGE --
+
+SELECT 
+    *, AVG(salary)
+FROM
+    salaries
+GROUP BY emp_no
+HAVING AVG(salary) > 120000;
+
+
+SELECT
+
+    *, AVG(salary)
+
+FROM
+
+    salaries
+
+WHERE
+
+    salary > 120000
+
+GROUP BY emp_no
+
+ORDER BY emp_no;
+
+
+-- USE OF COUNT --
+
+SELECT 
+    first_name, COUNT(first_name) AS name_counts
+FROM
+    employees
+WHERE
+    hire_date > '1999-01-01'
+GROUP BY first_name
+HAVING COUNT(first_name) < 200
+ORDER BY first_name ;
